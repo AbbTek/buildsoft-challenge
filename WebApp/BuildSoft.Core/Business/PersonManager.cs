@@ -13,7 +13,7 @@ namespace BuildSoft.Core.Business
         public static List<Person> Init()
         {
             var list = new List<Person>();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 var person = (Person)null;
                 var type = (PersonType)_random.Next(1, 5);

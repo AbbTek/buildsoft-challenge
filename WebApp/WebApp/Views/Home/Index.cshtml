@@ -3,4 +3,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>BuildSoft CodeTest</h2>
+<hr />
+<div ng-controller="personController">
+    <div class="row">
 
+    </div>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Race</th>
+                    <th>Age</th>
+                    <th>Height</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in people">
+                    <td> {{person.Name}}</td>
+                    <td> </td>
+                    <td> {{person.Age}}</td>
+                    <td> {{person.Height | number:2}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -32,12 +32,12 @@ namespace WebApp.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/buildsoft").Include(
                         "~/Scripts/angular.js",
-                        "~/Scripts/angular-animate.js"//,
+                        "~/Scripts/angular-animate.js",
 
-                        //"~/Scripts/domain/core/core.module.js",
-                        //"~/Scripts/domain/core/dataService.js",
-                        //"~/Scripts/domain/matcher/matcher.module.js",
-                        //"~/Scripts/domain/matcher/matcher.js"
+                        "~/Scripts/buildsoft/core/core.module.js",
+                        "~/Scripts/buildsoft/core/dataService.js",
+                        "~/Scripts/buildsoft/person/person.module.js",
+                        "~/Scripts/buildsoft/person/person.js"
                         ));
 
         }
