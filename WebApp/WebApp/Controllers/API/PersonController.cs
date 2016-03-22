@@ -12,9 +12,9 @@ namespace WebApp.Controllers.API
     public class PersonController : ApiController
     {
         [HttpGet]
-        public List<Person> GetPeople()
+        public PersonList GetPeople(uint page)
         {
-            return PersonManager.Init();
+            return PersonManager.GetPeople(page, 50, PersonType.Angle);
         }
     }
 }

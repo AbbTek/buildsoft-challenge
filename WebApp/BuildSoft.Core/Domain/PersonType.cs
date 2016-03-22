@@ -8,6 +8,7 @@ namespace BuildSoft.Core.Domain
 {
     public enum PersonType
     {
+        None = 0,
         Angle = 1,
         Asian,
         Jute,

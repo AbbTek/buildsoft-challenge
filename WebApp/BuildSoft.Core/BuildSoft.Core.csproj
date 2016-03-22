@@ -45,6 +45,7 @@
     <Compile Include="Domain\Asian.cs" />
     <Compile Include="Domain\Jute.cs" />
     <Compile Include="Domain\Person.cs" />
+    <Compile Include="Domain\PersonList.cs" />
     <Compile Include="Domain\PersonType.cs" />
     <Compile Include="Domain\Saxon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

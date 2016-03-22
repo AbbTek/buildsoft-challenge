@@ -28,11 +28,13 @@ namespace WebApp.App_Start
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/ui-bootstrap-csp.css",
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/buildsoft").Include(
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-animate.js",
+                        "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
 
                         "~/Scripts/buildsoft/core/core.module.js",
                         "~/Scripts/buildsoft/core/dataService.js",

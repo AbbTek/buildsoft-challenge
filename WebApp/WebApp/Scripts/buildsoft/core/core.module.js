@@ -5,6 +5,7 @@
 		/*
 		 * Angular modules
 		 */
-		'ngAnimate'
+		'ngAnimate',
+        'ui.bootstrap'
     ]);
 })();

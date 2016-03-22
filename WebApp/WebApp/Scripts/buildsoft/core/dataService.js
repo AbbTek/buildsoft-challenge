@@ -7,8 +7,8 @@
 
     function personService($http) {
         return {
-            getPeople: function () {
-                return $http.get('/api/person/getPeople');
+            getPeople: function (page) {
+                return $http.get('/api/person/getPeople', { params: { page: page } });
             }
         };
     }

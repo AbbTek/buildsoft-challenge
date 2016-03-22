@@ -9,7 +9,7 @@
 
     </div>
     <div class="row">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -27,5 +27,6 @@
                 </tr>
             </tbody>
         </table>
+        <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" max-size="10" boundary-links="true" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination> 
     </div>
 </div>
