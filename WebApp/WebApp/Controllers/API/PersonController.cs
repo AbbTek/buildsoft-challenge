@@ -14,7 +14,7 @@ namespace WebApp.Controllers.API
         [HttpGet]
         public PersonListResult GetPeople(uint page, PersonType personType)
         {
-            return PersonManager.GetPeople(page, 25, personType);
+            return PersonManager.GetPeople(page, 12, personType);
         }
 
         [HttpGet]
