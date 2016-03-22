@@ -6,8 +6,55 @@
 <hr />
 <div ng-controller="personController">
     <div class="row">
+        <div class="col-md-6">
+            <div>
+                <label>Select race...</label>
+                <select class="form-control" ng-model="personType" ng-change="typeChanged()">
 
+                    <option value="0">None</option>
+                    <option value="1">Angle</option>
+                    <option value="2">Asian</option>
+                    <option value="3">Jute</option>
+                    <option value="4">Saxon</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4><span class="label label-info">People: {{totalItems | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-info">Max Age: {{maxAge | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-info">Min Age: {{minAge | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-info">Average Age: {{averageAge | number:0}}</span></h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4><span class="label label-success">Angles: {{totalAngles | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-success">Asians: {{totalAsians | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-success">Jutes: {{totalJutes | number:0}}</span></h4>
+                </div>
+                <div class="col-sm-3">
+                    <h4><span class="label label-success">Saxons: {{totalSaxons | number:0}}</span></h4>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" type="button" ng-click="addOneYear()">Add 1 year to Age</button>
+            <button class="btn btn-default" type="button" ng-click="restart()">New random data</button>
+        </div>
     </div>
+    <hr />
     <div class="row">
         <table class="table table-bordered table-hover">
             <thead>
@@ -21,12 +68,12 @@
             <tbody>
                 <tr ng-repeat="person in people">
                     <td> {{person.Name}}</td>
-                    <td> </td>
+                    <td> {{person.PersonTypeName}}</td>
                     <td> {{person.Age}}</td>
                     <td> {{person.Height | number:2}}</td>
                 </tr>
             </tbody>
         </table>
-        <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" max-size="10" boundary-links="true" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination> 
+        <uib-pagination total-items="totalItems" items-per-page="itemsPerPage" max-size="10" boundary-links="true" ng-model="currentPage" ng-change="pageChanged()"></uib-pagination>
     </div>
 </div>

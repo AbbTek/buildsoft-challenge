@@ -12,9 +12,27 @@ namespace WebApp.Controllers.API
     public class PersonController : ApiController
     {
         [HttpGet]
-        public PersonList GetPeople(uint page)
+        public PersonListResult GetPeople(uint page, PersonType personType)
         {
-            return PersonManager.GetPeople(page, 50, PersonType.Angle);
+            return PersonManager.GetPeople(page, 25, personType);
+        }
+
+        [HttpGet]
+        public Dictionary<PersonType,int> GetConsolidatedData()
+        {
+            return PersonManager.GetConsolidatedData();
+        }
+
+        [HttpPost]
+        public void AddOneYear()
+        {
+            PersonManager.AddYear(1);
+        }
+
+        [HttpPost]
+        public void Restart()
+        {
+            PersonManager.Restart();
         }
     }
 }

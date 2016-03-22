@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BuildSoft.Core.Domain
+﻿namespace BuildSoft.Core.Domain
 {
     public class Jute : Person
     {
@@ -13,6 +7,14 @@ namespace BuildSoft.Core.Domain
             get
             {
                 return ((Age * 1.6f) / 2);
+            }
+        }
+
+        public override PersonType PersonType
+        {
+            get
+            {
+                return PersonType.Jute;
             }
         }
     }

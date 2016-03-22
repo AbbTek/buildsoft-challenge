@@ -7,8 +7,17 @@
 
     function personService($http) {
         return {
-            getPeople: function (page) {
-                return $http.get('/api/person/getPeople', { params: { page: page } });
+            getPeople: function (page, personType) {
+                return $http.get('/api/person/getpeople', { params: { page: page, personType: personType } });
+            },
+            addOneYear: function () {
+                return $http.post('/api/person/addoneyear');
+            },
+            getConsolidatedData: function () {
+                return $http.get('/api/person/getconsolidateddata');
+            },
+            restart: function () {
+                return $http.post('/api/person/restart');
             }
         };
     }

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace BuildSoft.Core.Domain
 {
-    public class PersonList
+    public class PersonListResult
     {
         public int TotalPeople { get; set; }
         public int ItemsPerPage { get; set; }
         public int CurrentPage { get; set; }
         public List<Person> List { get; set; }
+        public int MaxAge { get; set; }
+        public int MinAge { get; set; }
+        public int AverageAge { get; set; }
     }
 }

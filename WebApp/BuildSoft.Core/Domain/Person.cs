@@ -15,5 +15,9 @@ namespace BuildSoft.Core.Domain
             return "My name is '" + Name + "' and I am " + Age + " years old.";
         }
         public abstract float Height { get; }
+
+        public abstract PersonType PersonType { get; }
+
+        public string PersonTypeName { get { return PersonType.ToString(); } }
     }
 }

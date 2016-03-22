@@ -10,26 +10,32 @@ namespace BuildSoft.Core.Test
     public class PersonManagerTest
     {
         [TestMethod]
-        public void TestInit()
+        public void TestGetPeople()
         {
             //Action
-            var list1 = PersonManager.GetPeople(1, 10);
-            var list2 = PersonManager.GetPeople(2, 10);
-            var list3 = PersonManager.GetPeople(3, 10);
+            var list1 = PersonManager.GetPeople(1, 10, PersonType.Angle);
+            var list2 = PersonManager.GetPeople(2, 10, PersonType.Asian);
+            var list3 = PersonManager.GetPeople(3, 10, PersonType.Jute);
+            var list4 = PersonManager.GetPeople(3, 10, PersonType.Saxon);
 
-            ////Assert
-            //var angles = list.Where(x => x.GetType() == typeof(Angle)).Count();
-            //var asians = list.Where(x => x.GetType() == typeof(Asian)).Count();
-            //var jutes = list.Where(x => x.GetType() == typeof(Jute)).Count();
-            //var saxons = list.Where(x => x.GetType() == typeof(Saxon)).   Count();
+            //Assert
+            Assert.IsTrue(list1.TotalPeople > 2200);
+            Assert.IsTrue(list2.TotalPeople > 2200);
+            Assert.IsTrue(list3.TotalPeople > 2200);
+            Assert.IsTrue(list4.TotalPeople > 2200);
+        }
 
-            //var total = angles + asians + jutes + saxons;
-            ////It should be a similar number of objects for each type
-            //Assert.IsTrue(angles > 2200);
-            //Assert.IsTrue(asians > 2200);
-            //Assert.IsTrue(jutes > 2200);
-            //Assert.IsTrue(saxons > 2200);
-            //Assert.AreEqual(10000, total);
+        [TestMethod]
+        public void TestGetConsolidatedData()
+        {
+            //Action
+            var dic = PersonManager.GetConsolidatedData();
+
+            //Assert
+            Assert.IsTrue(dic[PersonType.Angle] > 2200);
+            Assert.IsTrue(dic[PersonType.Asian] > 2200);
+            Assert.IsTrue(dic[PersonType.Jute] > 2200);
+            Assert.IsTrue(dic[PersonType.Saxon] > 2200);
         }
     }
 }
